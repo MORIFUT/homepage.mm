@@ -1,0 +1,180 @@
+```html
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORIFUT（モリフット） | 岩手で気軽にフットサル・サッカーをするならMORIFUT</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome (for Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#0f172a', /* ダークな背景 */
+                            primary: '#2563eb', /* 鮮やかなロイヤルブルー */
+                            deep: '#030712', /* 超漆黒ネイビー */
+                            cyan: '#06b6d4', /* 近未来サイバー感のライトブルー */
+                            highlight: '#facc15' /* ゴールド/イエロー */
+                        },
+                        line: '#06C755', /* LINEブランドカラー */
+                        youtube: '#FF0000', /* YouTubeブランドカラー */
+                        tiktok: '#ffffff' /* TikTokブランドカラー */
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        en: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ページ全体で絶対にスクロールをロックさせないための強制設定 */
+        html, body {
+            height: auto !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            background-color: #030712;
+        }
+
+        /* 特大ブランドロゴ背景 */
+        .giant-text-bg {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15vw;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.15) 0%, rgba(6, 182, 212, 0.02) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .hero-pattern {
+            background-color: #030712;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.98)),
+                url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cta-pattern {
+            background-color: #030712;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.4) 0%, transparent 70%),
+                linear-gradient(rgba(3, 7, 18, 0.9), rgba(3, 7, 18, 0.98)),
+                url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ネオンホバーエフェクト */
+        .neon-shadow {
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+        .neon-shadow:hover {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-100 antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- ナビゲーションバー -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-900 shadow-xl">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- ロゴ -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <span class="text-3xl font-black font-en tracking-tighter text-brand-primary group-hover:text-brand-cyan transition duration-300">MORIFUT</span>
+                <span class="text-xs bg-brand-primary text-white font-bold px-2.5 py-1 rounded border border-brand-cyan/30">IWATE</span>
+            </a>
+
+            <!-- デスクトップメニュー -->
+            <nav class="hidden md:flex items-center space-x-8 font-bold tracking-wider text-sm">
+                <a href="#about" class="text-slate-400 hover:text-white transition duration-200">MORIFUTとは</a>
+                <a href="#sns" class="text-slate-400 hover:text-white transition duration-200">活動の様子</a>
+                <a href="#price" class="text-slate-400 hover:text-white transition duration-200">参加費・ルール</a>
+                <a href="#faq" class="text-slate-400 hover:text-white transition duration-200">よくある質問</a>
+                <a href="https://lin.ee/ZAr0ihf" target="_blank" rel="noopener noreferrer" class="bg-line hover:bg-[#05b34c] text-white px-6 py-3 rounded-xl font-extrabold shadow-lg hover:scale-105 transition-all duration-200 flex items-center space-x-2">
+                    <i class="fa-brands fa-line text-lg"></i>
+                    <span>予約する</span>
+                </a>
+            </nav>
+
+            <!-- モバイルメニューボタン -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-200 hover:text-brand-cyan focus:outline-none" aria-label="メニューを開く">
+                <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- モバイルドロワーメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-900 px-4 py-8 space-y-5 absolute left-0 w-full shadow-2xl transition-all duration-300">
+            <a href="#about" class="block font-bold text-slate-300 hover:text-brand-cyan py-2 border-b border-slate-900">MORIFUTとは</a>
+            <a href="#sns" class="block font-bold text-slate-300 hover:text-brand-cyan py-2 border-b border-slate-900">活動の様子</a>
+            <a href="#price" class="block font-bold text-slate-300 hover:text-brand-cyan py-2 border-b border-slate-900">参加費・ルール</a>
+            <a href="#faq" class="block font-bold text-slate-300 hover:text-brand-cyan py-2 border-b border-slate-900">よくある質問</a>
+            <a href="https://lin.ee/ZAr0ihf" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-line hover:bg-[#05b34c] text-white py-4 rounded-xl font-extrabold shadow-xl transition flex items-center justify-center space-x-2">
+                <i class="fa-brands fa-line text-xl"></i>
+                <span>予約する</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero-pattern py-16 lg:py-32 relative overflow-hidden flex items-center">
+        <!-- 背景文字 "MORIFUT" -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+            <div class="giant-text-bg mt-12">MORIFUT</div>
+        </div>
+
+        <!-- グラデーションオーバーレイ -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-20 w-full text-center lg:text-left">
+            <div class="lg:flex lg:items-center lg:justify-between gap-12">
+                <div class="lg:w-8/12 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-brand-primary/20 text-brand-cyan px-4 py-1.5 rounded-lg text-xs font-black tracking-widest uppercase border border-brand-primary/40">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-brand-cyan animate-ping"></span>
+                        <span>IWATE SPORTS COMMUNITY</span>
+                    </div>
+                    
+                    <!-- メインコピー -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-snug tracking-tighter">
+                        岩手で気軽にフットサル・<br class="sm:hidden">サッカーをするなら<br class="hidden sm:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-cyan font-en text-5xl sm:text-7xl lg:text-8xl block mt-2">MORIFUT</span>
+                    </h1>
+                    
+                    <!-- サブコピー -->
+                    <p class="text-lg sm:text-xl text-slate-200 font-black tracking-wider bg-slate-900/80 border-l-4 border-brand-cyan inline-block px-4 py-2 rounded-r-lg">
+                        経験者・未経験も大歓迎
+                    </p>
+
+                    <!-- LINEお問い合わせ -->
+                    <div class="bg-brand-primary/10 border border-brand-primary/30 rounded-xl p-4 max-w-xl backdrop-blur-sm mx-auto lg:mx-0">
+                        <p class="text-sm sm:text-base text-brand-cyan font-bold flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-1 sm:gap-2">
+                            <span class="flex items-center gap-1.5 shrink-0">
+                                <i class="fa-solid fa-comments text-brand-highlight animate-bounce"></i>
+                                気になることは気軽に
+                            </span>
+                            <span>LINEでお問い合わせください。</span>
+                        </p>
+                    </div>
+                    
+                    <!-- 呼びかけボタンエリア -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://lin.ee/ZAr0ihf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-line hover:bg-[#05b34c] text-white text-lg px-10 py-4 rounded-xl font-black shadow-2xl hover:scale-105 transition duration-200 flex items-center justify-center space-x-3">
+                  
